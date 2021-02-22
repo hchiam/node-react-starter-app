@@ -1,6 +1,6 @@
 # node-react-starter-app
 
-A basic react app with Typescript, Material-UI and back-end support
+A basic react app with Material-UI and back-end support
 
 This repository supports running a React app with node backend written using express.
 
