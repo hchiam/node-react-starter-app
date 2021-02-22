@@ -35,21 +35,21 @@ const useStyles = makeStyles(() => ({
 
 export default function App() {
     const classes = useStyles()
-    // const [data, setData] = React.useState()
-    // const [hasComponentInitialized, setHasComponentInitialized] = React.useState(false)
+    const [data, setData] = React.useState()
+    const [hasComponentInitialized, setHasComponentInitialized] = React.useState(false)
 
-    // const fetchData = React.useCallback(async () => {
-    //     const result = await fetch('/home')
-    //     const response = await result.json()
-    //     setData(response?.express)
-    // }, [])
+    const fetchData = React.useCallback(async () => {
+        const result = await fetch('/home')
+        const response = await result.json()
+        setData(response?.express)
+    }, [])
 
-    // React.useEffect(() => {
-    //     if (!data && !hasComponentInitialized) {
-    //         fetchData()
-    //         setHasComponentInitialized(true)
-    //     }
-    // }, [data, hasComponentInitialized, fetchData])
+    React.useEffect(() => {
+        if (!data && !hasComponentInitialized) {
+            fetchData()
+            setHasComponentInitialized(true)
+        }
+    }, [data, hasComponentInitialized, fetchData])
 
     return (
         <React.Fragment>
@@ -58,7 +58,7 @@ export default function App() {
                 <Typography variant="h1" className={classes.appHeader}>
                     <img src="/logo.svg" className={classes.appLogo} alt="logo" />
                     <Typography>Welcome to react-typescript-starter-app</Typography>
-                    {/* {!!data && <Typography>Server Response: {data}</Typography>} */}
+                    {!!data && <Typography>Server Response: {data}</Typography>}
                 </Typography>
             </Box>
         </React.Fragment>
