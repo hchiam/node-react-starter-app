@@ -28,6 +28,9 @@ const useStyles = makeStyles(() => ({
         fontSize: 'calc(10px + 2vmin)',
         color: 'white',
     },
+    welcomeMessage: {
+        transform: 'skewY(3deg)',
+    },
     appLink: {
         color: '#61dafb',
     },
@@ -54,10 +57,10 @@ export default function App() {
     return (
         <React.Fragment>
             <CssBaseline />
-            <Box className={clsx(classes.container, classes.app)}>
+            <Box className={clsx({ [classes.container]: true, [classes.app]: true })}>
                 <Typography variant="h1" className={classes.appHeader}>
                     <img src="/logo.svg" className={classes.appLogo} alt="logo" />
-                    <Typography>Welcome to react-typescript-starter-app</Typography>
+                    <Typography className={classes.welcomeMessage}>Welcome to react-typescript-starter-app</Typography>
                     {!!data && <Typography>Server Response: {data}</Typography>}
                 </Typography>
             </Box>
